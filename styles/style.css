@@ -3,6 +3,11 @@
 
 
 /* common styles */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -43,7 +48,10 @@ body{
     padding: 10px 24px;
     width: 168px;
     height: 44px;
-    background: #E02C6D;
+    background: #E02C6D;   
+}
+.button a:hover{
+    background-color: black;
 }
 .image img{
     width: 556px;
@@ -51,11 +59,11 @@ body{
     margin-top: 153px;
     margin-right: 140px;
     margin-bottom: 169px;
+    transition: transform 1s ease-in-out;
     
 }
 .image img:hover{
     transform: scale(1.1);
-    transition: transform 1s ease-in-out;
 }
 
 /*.......................................
@@ -68,7 +76,8 @@ players details section design starts
     grid-row-gap: 30px;
     grid-column-gap: 30px;
     margin-left: 180px;
-    margin-right: 210px;
+    margin-right: 210px; 
+    margin-top: 70px;
 }
 .player{
     width: 330px;
@@ -110,11 +119,11 @@ players details section design starts
      box-shadow: 0px 0px 10px;
      color:#18191F;
      width: 60%;
-
+     transition: transform 1s ease-in-out;
  }
+
  .match-details:hover{
     transform: scale(1.1);
-    transition: transform 1s ease-in-out;
     background-color: tomato;
 }
 
@@ -219,8 +228,49 @@ players details section design starts
         flex-direction: column;
         width: 250px;
         height: 175px;
-        margin-left: 10%;
+        margin-left: 0%;
         margin-right: 0%;
         margin-top: 175px;
         margin-bottom: 100px;     
     }
+}
+
+/* media query for tablet responsivness */
+
+@media only screen and (min-width:689px) and (max-width:991px) {
+
+     /* common section responsive */
+    main{
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* top banner section responsive  */
+    .top{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-right: 0px;
+    }
+    .tournament-info{
+        margin-top: 20%;
+        margin-left: 5%;
+    }
+    .tournament-name h2{
+        font-size: 40px;
+    }
+    .image img{
+        width: 450px;
+        height: 300px;
+        margin-left: 20%;
+    }
+    
+    /* players section responsive */
+    .all-players{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-column-gap: 30px;
+        margin-left: 2%;
+        margin-right: 0%;
+    }
+}
